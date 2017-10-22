@@ -7,14 +7,19 @@ ii.) It could be an infinite long interrupt, because the process could take over
 
 i.)
 Peterson’s Solution
-Process 0: 	wants to go into the critical region
-Saves the other process in a variable, sets his self as interested, points his self as the “loser” but continues cause the other one isn’t interested yet
+Process 0: 	
+	wants to go into the critical region
+	Saves the other process in a variable, sets his self as interested, points his self as the “loser” but continues cause the other one isn’t interested yet
+
 Meanwhile…
-Process 1: 	wants to go into the critical region
+Process 1: 	
+	wants to go into the critical region
 	Saves the other process in a variable, overrides “loser” and stops cause the other one is interested
-Process 0: does his stuff
-		Leaves critical region and sets his self as not interested anymore
-Process 1: 	sees that the other one isn’t interested anymore and can continue to the end now until it leaves the critical region
+Process 0: 
+	does his stuff
+	Leaves critical region and sets his self as not interested anymore
+Process 1:
+	sees that the other one isn’t interested anymore and can continue to the end now until it leaves the critical region
 
 ii.)
 strict alternation
@@ -23,18 +28,14 @@ Process 0:
 iii.)
 the last one becomes the loser cause he has to wait for the other process
 
-
-
-
-
 iv.)
 int loser;
 int j = 0; //count variable for interested ones
 
 void enter_region(int process) 
 { 
-      j++;
-loser = process; 
-while (loser == process && j >= 1) ;
+	j++;
+	loser = process; 
+	while (loser == process && j >= 1) ;
 }
 
