@@ -9,16 +9,18 @@ i.)
 Peterson’s Solution
 Process 0: 	
 	wants to go into the critical region
-	Saves the other process in a variable, sets his self as interested, points his self as the “loser” but continues cause the other one isn’t interested yet
+	Saves the other process in a variable, sets itself as interested, sets the other as the “loser” but continues because the other one isn’t interested yet
 
 Meanwhile…
 Process 1: 	
 	wants to go into the critical region
 	Saves the other process in a variable, overrides “loser” and stops cause the other one is interested
+
 Process 0: 
 	does his stuff
-	Leaves critical region and sets his self as not interested anymore
-Process 1:
+	Leaves critical region and sets itself as not interested anymore
+
+Process 1: 	
 	sees that the other one isn’t interested anymore and can continue to the end now until it leaves the critical region
 
 ii.)
@@ -26,7 +28,11 @@ strict alternation
 Process 0:
 
 iii.)
-the last one becomes the loser cause he has to wait for the other process
+the last one becomes the loser because he has to wait for the other process
+
+
+
+
 
 iv.)
 int loser;
